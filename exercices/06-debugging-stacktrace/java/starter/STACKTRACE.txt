@@ -1,0 +1,11 @@
+Exemple de stack trace à fournir (Spring Data JPA / Hibernate)
+
+org.hibernate.NonUniqueObjectException: A different object with the same identifier value was already associated with the session : [be.bstorm.formation.debugging.model.Order#3fa85f64-5717-4562-b3fc-2c963f66afa6]
+    at org.hibernate.engine.internal.StatefulPersistenceContext.checkUniqueness(StatefulPersistenceContext.java:748)
+    at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:279)
+    at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:120)
+    at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:970)
+    at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:281)
+    at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:611)
+    at be.bstorm.formation.debugging.service.OrderService.updateOrderStatus(OrderService.java:47)
+    at be.bstorm.formation.debugging.controller.OrderController.patchStatus(OrderController.java:28)

@@ -1,0 +1,7 @@
+Exemple de stack trace à fournir (Entity Framework Core)
+
+System.InvalidOperationException: The instance of entity type 'Order' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry...
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery...
+   at OrderService.UpdateOrderStatusAsync(Guid orderId, OrderStatus newStatus) in OrderService.cs:line 47
+   at OrderController.PatchStatus(Guid id, OrderStatus status) in OrderController.cs:line 22

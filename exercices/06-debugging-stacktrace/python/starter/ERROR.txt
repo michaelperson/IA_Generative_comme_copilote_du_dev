@@ -1,0 +1,16 @@
+Exemple de traceback à fournir (SQLAlchemy)
+
+Traceback (most recent call last):
+  File "order_service.py", line 30, in update_order_status
+    session.add(order)
+  File ".../sqlalchemy/orm/session.py", line 3489, in add
+    self._save_or_update_state(state)
+  File ".../sqlalchemy/orm/session.py", line 3513, in _save_or_update_state
+    self._save_or_update_impl(state)
+  File ".../sqlalchemy/orm/session.py", line 4203, in _save_or_update_impl
+    self._update_impl(state)
+  File ".../sqlalchemy/orm/session.py", line 4186, in _update_impl
+    to_attach = self._before_attach(state, obj)
+  File ".../sqlalchemy/orm/session.py", line 4277, in _before_attach
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Object '<Order at 0x7f66884cb310>' is already attached to session '2' (this is '3')

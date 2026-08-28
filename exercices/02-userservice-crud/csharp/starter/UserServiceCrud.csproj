@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>UserServiceCrud</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Fournit IHttpClientFactory en dehors d'un hôte ASP.NET Core / Generic Host. -->
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
