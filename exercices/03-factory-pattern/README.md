@@ -1,6 +1,5 @@
 # Exercice 3 — Expliquer un design pattern puis l'implémenter (Factory)
 
-**Durée** : 30 minutes
 **Module** : Module 4 — L'IA comme Assistant de Code
 
 ## Objectif pédagogique
@@ -45,5 +44,5 @@ Contrainte : la structure doit être une véritable application du Factory Metho
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : point de départ, à compléter en suivant la consigne.
-- `csharp/solution`, `java/solution`, `python/solution` : correction de référence, à ne consulter qu'après avoir tenté l'exercice.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter`, `typescript/starter` : point de départ, à compléter en suivant la consigne.
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution`, `typescript/solution` : correction de référence, à ne consulter qu'après avoir tenté l'exercice.

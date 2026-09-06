@@ -1,6 +1,5 @@
 # Exercice 4 — Générer une suite de tests unitaires complète
 
-**Durée** : 45 minutes
 **Module** : Module 5 — Accélérer la Qualité : Tests et QA
 
 ## Objectif pédagogique
@@ -49,6 +48,6 @@ public static decimal CalculerMontantRemise(decimal montantCommande, int anneesF
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : la fonction métier déjà implémentée et correcte, avec un test minimal seulement (le projet compile et s'exécute en vert) — à vous de construire la suite complète en suivant la consigne.
-- `csharp/solution`, `java/solution`, `python/solution` : suite de tests de référence complète.
-- `csharp/solution-style-copilot`, `csharp/solution-style-claude` : deux variantes illustrant des styles différents de suite de tests générée (voir le `NOTE.md` de chaque dossier) — la variante "copilot" est une suite correcte mais moins exhaustive (plus proche d'un premier jet rapide), la variante "claude" est aussi exhaustive que `solution/`, avec des noms de test Given_When_Then et des commentaires expliquant le *pourquoi* de chaque cas limite.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter` : la fonction métier déjà implémentée et correcte, avec un test minimal seulement (le projet compile et s'exécute en vert) — à vous de construire la suite complète en suivant la consigne.
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution` : suite de tests de référence complète.
+- `<langage>/solution-style-copilot`, `<langage>/solution-style-claude` : deux variantes de la solution, illustrant des différences de style typiquement observées selon l'outil IA utilisé (voir le `NOTE.md` de chacune). Elles sont fournies **dans les quatre langages**. Le comportement observable y est strictement identique à celui de `solution/` : seuls changent la granularité du découpage, le niveau de documentation et la richesse du typage.

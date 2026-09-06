@@ -1,6 +1,5 @@
 # Exercice 6 — Identifier la cause racine à partir d'une stack trace
 
-**Durée** : 45 minutes
 **Module** : Module 6 — L'IA comme Assistant de Debugging
 
 ## Objectif pédagogique
@@ -66,14 +65,16 @@ L'entité mise en cache provient d'un DbContext scoped à une requête précéde
 
 ## Adaptation par langage
 
-Le bug exact (cache applicatif partagé + entité ORM "trackée" par un contexte/session scopé par requête) est spécifique à Entity Framework Core en C#. Le même *pattern* de cause racine est adapté aux ORM idiomatiques des deux autres langages :
+Le bug exact (cache applicatif partagé + entité ORM "trackée" par un contexte/session scopé par requête) est spécifique à Entity Framework Core en C#. Le même *pattern* de cause racine est adapté aux ORM idiomatiques des trois autres langages :
 
 - **Java** : Spring Data JPA / Hibernate — le cache Caffeine (singleton applicatif) conserve une entité `Order` suivie par une session Hibernate liée à une requête précédente ; une deuxième requête tente de la faire suivre par une autre session, d'où `org.hibernate.NonUniqueObjectException`.
 - **Python** : SQLAlchemy — un dictionnaire de cache au niveau module conserve un objet `Order` ORM encore attaché à une `Session` d'une requête précédente ; une deuxième requête tente de l'ajouter à sa propre `Session`, d'où `sqlalchemy.exc.InvalidRequestError: ... is already attached to session`.
 
-Dans les trois langages, la correction retenue est identique dans son principe : ne jamais mettre en cache l'entité/objet suivi par l'ORM, mais un DTO/snapshot immuable, et toujours recharger l'entité depuis le contexte/session/EntityManager courant avant toute écriture.
+- **TypeScript** : une « unité de travail » simplifiée reproduit la contrainte « une entité, une seule session » commune à tous les ORM ; un cache applicatif de niveau module conserve une entité encore rattachée à la session d'une requête précédente, et la session suivante refuse de la suivre.
+
+Dans les quatre langages, la correction retenue est identique dans son principe : ne jamais mettre en cache l'entité/objet suivi par l'ORM, mais un DTO/snapshot immuable, et toujours recharger l'entité depuis le contexte/session/EntityManager courant avant toute écriture.
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : le code fautif (reproduisant le bug), le message d'erreur/stack trace correspondant (`STACKTRACE.txt` / `ERROR.txt`), et un `DIAGNOSTIC.md` vide à compléter en suivant les 3 étapes.
-- `csharp/solution`, `java/solution`, `python/solution` : le code corrigé et un `DIAGNOSIS.md` rempli (corrigé de référence pour les 3 étapes), à ne consulter qu'après avoir tenté l'exercice.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter` : le code fautif (reproduisant le bug), le message d'erreur/stack trace correspondant (`STACKTRACE.txt` / `ERROR.txt`), et un `DIAGNOSTIC.md` vide à compléter en suivant les 3 étapes.
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution` : le code corrigé et un `DIAGNOSIS.md` rempli (corrigé de référence pour les 3 étapes), à ne consulter qu'après avoir tenté l'exercice.

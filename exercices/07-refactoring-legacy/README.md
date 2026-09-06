@@ -1,6 +1,5 @@
 # Exercice 7 — Refactorer une fonction legacy (SOLID / DRY)
 
-**Durée** : 60 minutes
 **Module** : Module 7 — Dompter le Code Legacy
 
 ## Objectif pédagogique
@@ -88,8 +87,8 @@ Faites remarquer au groupe la présence volontaire d'un TODO jamais implémenté
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : le code legacy original, non refactoré, avec toutes ses odeurs de code intactes (chaînes if/else, chaînes magiques, effet de bord console, TODO mort). Pas de tests encore : les écrire fait partie de l'exercice (étape 2).
-- `csharp/solution`, `java/solution`, `python/solution` : le code refactoré selon les 4 étapes nommées, avec les tests de caractérisation qui passent toujours sans avoir été modifiés. Le point d'extension de notification manager reste explicitement non implémenté (voir le commentaire dédié dans le code).
-- `csharp/solution-style-copilot`, `csharp/solution-style-claude` : deux variantes illustrant des styles différents de refactoring généré (voir le `NOTE.md` de chaque dossier) — la variante "copilot" applique le découpage SRP avec moins de documentation et de nommage explicite, la variante "claude" documente chaque classe extraite (responsabilité, raisonnement) et signale explicitement le TODO du manager comme un gap connu.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter` : le code legacy original, non refactoré, avec toutes ses odeurs de code intactes (chaînes if/else, chaînes magiques, effet de bord console, TODO mort). Pas de tests encore : les écrire fait partie de l'exercice (étape 2).
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution` : le code refactoré selon les 4 étapes nommées, avec les tests de caractérisation qui passent toujours sans avoir été modifiés. Le point d'extension de notification manager reste explicitement non implémenté (voir le commentaire dédié dans le code).
+- `<langage>/solution-style-copilot`, `<langage>/solution-style-claude` : deux variantes de la solution, illustrant des différences de style typiquement observées selon l'outil IA utilisé (voir le `NOTE.md` de chacune). Elles sont fournies **dans les quatre langages**. Le comportement observable y est strictement identique à celui de `solution/` : seuls changent la granularité du découpage, le niveau de documentation et la richesse du typage.
 
-**Note inter-langages** : les valeurs numériques attendues dans les tests diffèrent légèrement dans leur représentation textuelle d'un langage à l'autre (par ex. `"847 EUR"` en C# contre `"847.0 EUR"` en Java et en Python) — c'est une différence idiomatique de conversion `double`/`float` vers chaîne de caractères entre ces langages, pas une différence de comportement métier.
+**Note inter-langages** : les valeurs numériques attendues dans les tests diffèrent légèrement dans leur représentation textuelle d'un langage à l'autre (par ex. `"847 EUR"` en C# contre `"847.0 EUR"` en Java et en Python) — c'est une différence idiomatique de conversion `double`/`float` vers chaîne de caractères entre ces langages, pas une différence de comportement métier. La version TypeScript utilise ses propres valeurs de caractérisation, dont un `"114.99999999999999 EUR"` sur le cas du pays inconnu : cet artefact d'arithmétique flottante est **volontairement figé tel quel**. Le « corriger » pendant le refactoring serait un changement de comportement, à décider explicitement et non en passant — c'est précisément ce qu'un test de caractérisation sert à détecter.

@@ -1,6 +1,5 @@
 # Exercice 2 — Générer une classe client API (UserService)
 
-**Durée** : 40 minutes
 **Module** : Module 4 — L'IA comme Assistant de Code
 
 ## Objectif pédagogique
@@ -50,9 +49,10 @@ Point de vigilance à soulever en débriefing : demandez au groupe si l'IA a bie
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : point de départ, à compléter en suivant la consigne.
-- `csharp/solution`, `java/solution`, `python/solution` : correction de référence, à ne consulter qu'après avoir tenté l'exercice.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter`, `typescript/starter` : point de départ, à compléter en suivant la consigne.
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution`, `typescript/solution` : correction de référence, à ne consulter qu'après avoir tenté l'exercice.
 
-Note d'adaptation inter-langages : le prompt du support cible explicitement C#/.NET (`IHttpClientFactory`, `System.Text.Json`, `CancellationToken`). Les versions Java et Python de cet exercice transposent les mêmes quatre contraintes (client HTTP injecté, exception typée sur non-2xx, sérialisation JSON, comportement de timeout explicite) avec les mécanismes idiomatiques de chaque langage :
+Note d'adaptation inter-langages : le prompt du support cible explicitement C#/.NET (`IHttpClientFactory`, `System.Text.Json`, `CancellationToken`). Les versions Java, Python et TypeScript de cet exercice transposent les mêmes quatre contraintes (client HTTP injecté, exception typée sur non-2xx, sérialisation JSON, comportement de timeout explicite) avec les mécanismes idiomatiques de chaque langage :
 - **Java** n'a pas d'équivalent direct de `CancellationToken` : les méthodes du service sont asynchrones (`CompletableFuture`) et le timeout est porté par un délai explicite de 10 secondes sur chaque requête HTTP (voir le commentaire dans `UserServiceImpl.java`).
 - **Python** exploite l'annulation coopérative native d'`asyncio` (annulation d'une tâche) comme équivalent du `CancellationToken`, combinée à un timeout explicite de 10 secondes sur le client HTTP.
+- **TypeScript** utilise le `fetch` natif de Node (aucune dépendance HTTP externe), l'`AbortSignal` comme équivalent direct du `CancellationToken`, et `AbortSignal.timeout` pour le délai d'expiration de 10 secondes. Les deux signaux sont combinés par `AbortSignal.any` : le premier des deux qui se déclenche interrompt l'appel, et seul le dépassement de délai est traduit en exception typée — une annulation demandée par l'appelant remonte telle quelle.

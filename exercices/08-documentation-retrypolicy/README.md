@@ -1,6 +1,5 @@
 # Exercice 8 — Générer la documentation d'une classe non documentée
 
-**Durée** : 30 minutes
 **Module** : Module 8 — L'IA pour la « Developer Experience » (DX)
 
 ## Objectif pédagogique
@@ -98,9 +97,9 @@ le documenter comme un comportement voulu.
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : la classe `RetryPolicy` non documentée
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter` : la classe `RetryPolicy` non documentée
   (avec son défaut intact), accompagnée d'un `DOC_TEMPLATE.md` à compléter.
-- `csharp/solution`, `java/solution`, `python/solution` : correction de référence — la même
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution` : correction de référence — la même
   classe (logique et défaut inchangés), entièrement documentée dans le format propre au
   langage, accompagnée d'un `INCOHERENCES.md` (l'analyse attendue de l'incohérence) et, à titre
   de bonus, d'une variante `RetryPolicyFixed` montrant le correctif du défaut. À ne consulter

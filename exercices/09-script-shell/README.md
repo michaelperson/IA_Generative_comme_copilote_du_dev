@@ -1,6 +1,5 @@
 # Exercice 9 — Générer un script shell en langage naturel
 
-**Durée** : 30 minutes
 **Module** : Module 8 — L'IA pour la « Developer Experience » (DX)
 
 ## Adaptation de langages pour cet exercice
@@ -8,7 +7,7 @@
 Cet exercice est, dans le programme original de la formation, un exercice de
 **script bash** (automatisation système), pas un exercice de code
 métier C#/Java orienté objet. Appliquer strictement la structure
-`csharp/` + `java/` + `python/` du reste du dépôt (voir `SPEC.md`) aurait
+`csharp/` + `java/` + `python/` + `typescript/` du reste du dépôt (voir `SPEC.md`) aurait
 demandé de traduire cette tâche en applications console C# et Java — un
 exercice artificiel, qui dénaturerait l'objectif pédagogique réel : rédiger
 une demande en langage naturel pour un **script d'automatisation shell**,
@@ -26,9 +25,9 @@ En conséquence, pour ce dossier uniquement :
   de scripts système est également un usage très courant de Python, l'un
   des trois langages cibles du dépôt, et voir la même problématique
   résolue dans un second langage a une valeur pédagogique propre.
-- **Il n'y a volontairement pas de dossiers `csharp/` ni `java/`** pour cet
-  exercice : écrire un script de compression de fichiers de logs sous forme
-  d'application console C# ou Java n'est pas ce que demande le programme, et
+- **Il n'y a volontairement pas de dossiers `csharp/`, `java/` ni
+  `typescript/`** pour cet exercice : écrire un script de compression de fichiers de logs sous forme
+  d'application console C#, Java ou Node n'est pas ce que demande le programme, et
   aurait été un exercice de traduction artificiel plutôt qu'une illustration
   fidèle de la consigne.
 

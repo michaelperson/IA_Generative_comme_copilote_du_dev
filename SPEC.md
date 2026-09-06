@@ -1,6 +1,6 @@
 # Spécification — dépôt d'exercices "L'IA générative comme copilote du développeur"
 
-Ce dépôt accompagne une formation bstorm (3 jours). Il contient, pour chacun des 9 exercices pratiques du programme, un squelette de départ ("starter") et une correction de référence ("solution"), déclinés en C#, Java et Python (sauf mention contraire dans la consigne de l'exercice).
+Ce dépôt accompagne une formation bstorm. Il contient, pour chacun des 9 exercices pratiques du programme, un squelette de départ ("starter") et une correction de référence ("solution"), déclinés en C#, Java et Python (sauf mention contraire dans la consigne de l'exercice).
 
 ## Arborescence attendue pour CHAQUE exercice
 
@@ -43,12 +43,11 @@ Si l'exercice a des variantes "style IA" demandées (voir consigne spécifique),
 
 ## Contenu du README.md de chaque exercice
 
-Reprends fidèlement (en français, reformulation légère autorisée pour la clarté) : le titre de l'exercice, l'objectif pédagogique, la durée indiquée, la consigne, les étapes numérotées si présentes, le ou les prompts d'exemple fournis dans le support (à citer tels quels dans un bloc de code, avec leur légende), et les critères d'évaluation / piste de correction / débriefing s'ils existent. Structure suggérée :
+Reprends fidèlement (en français, reformulation légère autorisée pour la clarté) : le titre de l'exercice, l'objectif pédagogique, la consigne, les étapes numérotées si présentes, le ou les prompts d'exemple fournis dans le support (à citer tels quels dans un bloc de code, avec leur légende), et les critères d'évaluation / piste de correction / débriefing s'ils existent. Structure suggérée :
 
 ```markdown
 # Exercice N — Titre
 
-**Durée** : ...
 **Module** : ...
 
 ## Objectif pédagogique
@@ -90,3 +89,28 @@ Pour chaque langage de chaque exercice que tu traites :
 3. N'invente pas de contenu pédagogique qui ne soit pas dans la consigne fournie — tu peux structurer et nommer les fichiers à ta discrétion, mais le fond doit rester fidèle.
 
 Termine ta réponse par la liste des fichiers créés (chemins relatifs) pour cet exercice.
+
+## Ajout d'un exercice en TypeScript
+
+Chaque dossier `typescript/{starter,solution}` est un projet Node autonome :
+
+- `package.json` (`type: module`, scripts `test` et `typecheck`), avec pour seules
+  dépendances de développement `vitest` et `typescript` ;
+- `tsconfig.json` en mode `strict` avec `noUncheckedIndexedAccess` ;
+- le code de production dans `src/`, les tests dans `tests/`, suffixés `.test.ts` ;
+- les imports internes portent l'extension `.js` (résolution ESM), même depuis
+  des fichiers `.ts`.
+
+Aucune dépendance externe au-delà de vitest et typescript : le `fetch` natif de
+Node 20+ suffit pour l'exercice 2.
+
+## Variantes de style IA
+
+Les exercices 1, 4 et 7 proposent, dans les quatre langages, deux variantes
+`solution-style-copilot/` et `solution-style-claude/`. Règle à respecter si l'on
+en ajoute : le **comportement observable doit être strictement identique** à
+celui de `solution/` — mêmes valeurs de retour, mêmes erreurs levées, mêmes
+tests qui passent. Seuls changent la granularité du découpage, le niveau de
+documentation et la richesse du typage. Chaque variante porte un `NOTE.md`
+rappelant qu'il s'agit d'une illustration pédagogique et non d'une capture
+réelle.

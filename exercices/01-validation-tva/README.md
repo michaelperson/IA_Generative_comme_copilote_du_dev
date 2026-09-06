@@ -1,6 +1,5 @@
 # Exercice 1 — Affiner itérativement un prompt (validation de numéro de TVA)
 
-**Durée** : 45 minutes (30' individuel ou en binôme + 15' débriefing collectif)
 **Module** : Module 3 — Le Prompt Engineering du développeur
 
 ## Objectif pédagogique
@@ -81,6 +80,6 @@ Contraintes :
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : point de départ, à compléter en suivant la consigne.
-- `csharp/solution`, `java/solution`, `python/solution` : correction de référence, à ne consulter qu'après avoir tenté l'exercice.
-- `csharp/solution-style-copilot`, `csharp/solution-style-claude` : deux variantes de la solution C#, illustrant des différences de style typiquement observées selon l'outil IA utilisé (voir le `NOTE.md` de chacune). Ces variantes ne sont fournies qu'en C# pour cet exercice ; Java et Python n'ont que `starter/` et `solution/`.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter`, `typescript/starter` : point de départ, à compléter en suivant la consigne.
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution`, `typescript/solution` : correction de référence, à ne consulter qu'après avoir tenté l'exercice.
+- `<langage>/solution-style-copilot`, `<langage>/solution-style-claude` : deux variantes de la solution, illustrant des différences de style typiquement observées selon l'outil IA utilisé (voir le `NOTE.md` de chacune). Elles sont fournies **dans les quatre langages**. Le comportement observable y est strictement identique à celui de `solution/` : seuls changent la granularité du découpage, le niveau de documentation et la richesse du typage.

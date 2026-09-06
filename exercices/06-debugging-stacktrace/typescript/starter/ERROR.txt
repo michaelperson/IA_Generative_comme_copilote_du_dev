@@ -1,0 +1,10 @@
+EntityAlreadyTrackedError: The instance of entity type 'Order' cannot be tracked
+because another instance with the same key value for {'Id'} is already being
+tracked. (id=11111111-1111-1111-1111-111111111111)
+    at Session.track (src/models.ts:68:13)
+    at updateOrderStatus (src/orderService.ts:25:11)
+    at OrderController.patchStatus (src/orderController.ts:18:5)
+
+Contexte d'exploitation : l'erreur survient de façon intermittente en
+production, uniquement sous charge. Elle ne se reproduit jamais sur un poste de
+développement en requête unique.

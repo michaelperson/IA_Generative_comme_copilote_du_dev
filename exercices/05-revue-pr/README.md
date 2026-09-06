@@ -1,6 +1,5 @@
 # Exercice 5 — Simuler une revue de Pull Request
 
-**Durée** : 45 minutes
 **Module** : Module 5 — Accélérer la Qualité : Tests et QA
 
 ## Objectif pédagogique
@@ -56,5 +55,5 @@ Format : liste structurée, un problème par ligne, triée par sévérité décr
 
 ## Utilisation de ce dossier
 
-- `csharp/starter`, `java/starter`, `python/starter` : contiennent le code à relire (la « PR »), les guidelines d'équipe (`GUIDELINES.md`) et un gabarit vide (`REVIEW_TEMPLATE.md`) à compléter en suivant la consigne.
-- `csharp/solution`, `java/solution`, `python/solution` : contiennent la revue de référence complétée (`REVIEW.md`) ainsi qu'une version corrigée du code (`CorrectedExample.*`) appliquant toutes les corrections proposées — à ne consulter qu'après avoir tenté l'exercice.
+- `csharp/starter`, `java/starter`, `python/starter`, `typescript/starter` : contiennent le code à relire (la « PR »), les guidelines d'équipe (`GUIDELINES.md`) et un gabarit vide (`REVIEW_TEMPLATE.md`) à compléter en suivant la consigne.
+- `csharp/solution`, `java/solution`, `python/solution`, `typescript/solution` : contiennent la revue de référence complétée (`REVIEW.md`) ainsi qu'une version corrigée du code (`CorrectedExample.*`) appliquant toutes les corrections proposées — à ne consulter qu'après avoir tenté l'exercice.
